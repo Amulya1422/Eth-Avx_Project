@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+contract ErrorHandling {
+    uint public a=7;
+    uint public z;
+    uint public c=1;
+
+    function testRequire(uint _x) external    {
+        require(_x>7,"x is less than 7");
+        a++;
+    }
+    function testRevert(uint _b) external {
+        if(_b<7){
+            revert("b is less than 7");
+        }
+        a++;
+    }
+    function testAssert() external  {
+        assert(z==0);
+        c++;
+    }
+    
+}
